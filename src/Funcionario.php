@@ -38,6 +38,16 @@
             $this->desconto = 0.10;
         }
 
+        public function __toString(): string
+        {
+            return "<p>Nome: ".$this->nome.
+            "<br>Idade: ".$this->idade.
+            "<br>End: ".$this->endereco->getNomeLogradouro().", ".$this->endereco->getNumero()." - ".$this->endereco->getBairro().
+            "<br>Cargo: ".$this->cargo.
+            "<br>Salário R$: ".$this->salario.
+            "</p>";
+        }
+
     }
 
 ?>

@@ -1,11 +1,11 @@
 <?php 
 
     abstract class Pessoa {
-        private string   $nome;
-        private int      $idade;
-        protected float  $desconto;
-        private Endereco $endereco;
-        private static int $numDePessoas = 0;
+        protected        string        $nome;
+        protected        int           $idade;
+        protected        float         $desconto;
+        protected        Endereco      $endereco;
+        protected static int           $numDePessoas = 0;
 
         public function __construct(string $nome, int $idade, Endereco $endereco)
         {
@@ -71,5 +71,8 @@
         {
             return $this->desconto;
         }
+
+
+        public abstract function __toString():  string;
     }
 ?>
