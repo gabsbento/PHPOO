@@ -1,6 +1,9 @@
 <?php 
 
+    require_once 'AcessoAtributos.php';
+
     abstract class Pessoa {
+        use                            AcessoAtributos;
         protected        string        $nome;
         protected        int           $idade;
         protected        float         $desconto;

@@ -27,4 +27,9 @@
     $funcionario->setSenha('123');
 
     $funcionario->login("Gabriel", '123');
+
+    echo $endereco->bairro.'<br>';
+
+    echo $cliente->nome.'<br>';
+    echo $funcionario->nome;
 ?>
