@@ -23,4 +23,8 @@
     echo $funcionario->__toString();
     echo "<hr>";
     echo $cliente->__toString();
+
+    $funcionario->setSenha('123');
+
+    $funcionario->login("Gabriel", '123');
 ?>
