@@ -1,8 +1,10 @@
-<?php 
+<?php
 
+use Bento\Comercial\Infraestrutura\Persistencia\CriadorConexao;
+use Bento\Comercial\Model\Produto;
     require_once 'autoload.php';
     
-    use Bento\Comercial\Model\Endereco;
+/*    use Bento\Comercial\Model\Endereco;
     use Bento\Comercial\Model\Pessoa;
     use Bento\Comercial\Model\Funcionario;
     use Bento\Comercial\Model\Cliente;
@@ -32,5 +34,14 @@
     echo $endereco->bairro.'<br>';
 
     echo $cliente->nome.'<br>';
-    echo $funcionario->nome;
+    echo $funcionario->nome;*/
+
+
+    echo "<pre>";
+        $conexao = CriadorConexao::criarConexao();
+        var_dump($conexao);
+
+        $produto = new Produto(NULL, "Tablet", 2700.00);
+        var_dump($produto);
+    echo "<pre>";
 ?>
