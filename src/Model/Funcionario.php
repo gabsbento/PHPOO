@@ -1,5 +1,6 @@
 <?php 
-    require_once 'Autenticar.php';
+    namespace Bento\Comercial\Model;
+    require_once 'autoload.php';
 
     class Funcionario extends Pessoa implements Autenticar{
         private string $cargo;

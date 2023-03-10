@@ -1,5 +1,6 @@
 <?php 
-    require_once 'AcessoAtributos.php';
+    namespace Bento\Comercial\Model;
+    require_once 'autoload.php';
 
     class Endereco{
         use AcessoAtributos;

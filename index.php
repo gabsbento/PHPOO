@@ -1,10 +1,11 @@
 <?php 
 
-    require_once 'src/Pessoa.php';
-    require_once 'src/Endereco.php';
-    require_once 'src/Cliente.php';
-    require_once 'src/Funcionario.php';
+    require_once 'autoload.php';
     
+    use Bento\Comercial\Model\Endereco;
+    use Bento\Comercial\Model\Pessoa;
+    use Bento\Comercial\Model\Funcionario;
+    use Bento\Comercial\Model\Cliente;
 
     $endereco = new Endereco('AL', 'Maceió', 'Rua do Sol', '126', 'Centro', '57000-000');
 

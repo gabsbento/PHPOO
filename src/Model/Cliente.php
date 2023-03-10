@@ -1,4 +1,5 @@
 <?php 
+    namespace Bento\Comercial\Model;
 
     class Cliente extends Pessoa{
         private string $dataNascimento;

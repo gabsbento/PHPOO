@@ -1,6 +1,6 @@
 <?php 
-
-    require_once 'AcessoAtributos.php';
+    namespace Bento\Comercial\Model;
+    require_once 'autoload.php';
 
     abstract class Pessoa {
         use                            AcessoAtributos;

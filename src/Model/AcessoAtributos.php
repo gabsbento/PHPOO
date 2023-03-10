@@ -1,4 +1,5 @@
 <?php 
+    namespace Bento\Comercial\Model;
 
     trait AcessoAtributos {
 
