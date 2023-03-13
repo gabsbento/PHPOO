@@ -67,6 +67,38 @@
             $stmt->bindValue(1, $produto->getIdProduto(), PDO::PARAM_INT);
             return $stmt->execute();
         }
+
+        public function hidratarListaProdutos(\PDOStatement $stmt): array
+        {
+            $listaDadosProdutos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $listaProdutos      = [];
+
+            echo "<table>";
+            foreach ($listaDadosProdutos as $dadosProduto)
+            {
+                $listaProdutos[]  = new Produto(
+                    $dadosProduto['idProduto'],
+                    $dadosProduto['nomeProduto'],
+                    $dadosProduto['precoProduto'],
+                );
+                echo "
+                    <tr>
+                        <td width='20'>
+                            {$dadosProduto['idProduto']}
+                        </td>
+                        <td width='150'>
+                            {$dadosProduto['nomeProduto']}
+                        </td>
+                        <td align='right'>
+                            ".number_format($dadosProduto['idProduto'], 2, ',' , '.')."
+                        </td>
+                    </tr>
+                ";
+            }
+            echo "</table>";
+
+            return $listaProdutos;
+        }
     }
 
 ?>
