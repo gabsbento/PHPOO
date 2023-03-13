@@ -90,7 +90,7 @@
                             {$dadosProduto['nomeProduto']}
                         </td>
                         <td align='right'>
-                            ".number_format($dadosProduto['idProduto'], 2, ',' , '.')."
+                            ".number_format($dadosProduto['precoProduto'], 2, ',' , '.')."
                         </td>
                     </tr>
                 ";

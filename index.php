@@ -10,6 +10,8 @@ use Bento\Comercial\Model\Produto;
         var_dump($repositorio);
 
         $produto = new Produto(NULL, "Tablet", 2700.00);
-        var_dump($produto);
+        //var_dump($produto);
+
+        $repositorio->todosProdutos();
     echo "<pre>";
 ?>
