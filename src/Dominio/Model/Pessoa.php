@@ -1,22 +1,23 @@
 <?php 
     namespace Bento\Comercial\Dominio\Model;
     require_once 'autoload.php';
-
+    use                                              DateTimeInterface;
     abstract class Pessoa {
-        use                            AcessoAtributos;
-        protected        string        $nome;
-        protected        int           $idade;
-        protected        float         $desconto;
-        protected        Endereco      $endereco;
-        protected static int           $numDePessoas = 0;
+        use                                          AcessoAtributos;
+        protected        ?int                        $id;
+        protected        string                      $nome;
+        protected        DateTimeInterface           $dataNascimento;
+        protected        float                       $desconto;
+        protected        Endereco                    $endereco;
+        protected static int                         $numDePessoas = 0;
 
-        public function __construct(string $nome, int $idade, Endereco $endereco)
+        public function __construct(?int $id, string $nome, DateTimeInterface $dataNascimento, Endereco $endereco)
         {
-            $this->nome         = $nome;
-            $this->idade        = $idade;
-            $this->endereco     = $endereco;
+            $this->id                    = $id;
+            $this->nome                  = $nome;
+            $this->dataNascimento        = $dataNascimento;
+            $this->endereco              = $endereco;
             $this->setDesconto();
-            $this->validaIdade($idade);
             self::$numDePessoas++;
 
         }
@@ -47,16 +48,16 @@
             return $this->nome;
         }
 
-        public function setIdade(int $idade):   void
+        public function setDataNascimento(DateTimeInterface $dataNascimento):   void
         {
-            $this->idade = $idade;
+            $this->dataNascimento = $dataNascimento;
         }
 
-        public function getIdade(): int
+        public function getDataNascimento(): DateTimeInterface
         {
-            return $this->idade;
+            return $this->dataNascimento;
         }
-
+/*
         private function validaIdade(int $idade):   void
         {
             if($idade > 0 AND $idade < 125){
@@ -66,7 +67,14 @@
                 exit;
             }
         }
+*/
 
+        public function idade(): int
+        {
+            return $this->getDataNascimento()
+                        ->diff(new \DateTimeImmutable())
+                        ->y;
+        }
 
         protected abstract function setDesconto(): void;
 

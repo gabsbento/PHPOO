@@ -1,27 +1,16 @@
 <?php 
     namespace Bento\Comercial\Dominio\Model;
-
+    use DateTimeInterface;
     class Cliente extends Pessoa{
-        private string $dataNascimento;
         private float $renda;
 
 
-        public function __construct(string $nome, int $idade, Endereco $endereco, string $dataNascimento, float $renda)
+        public function __construct(?int $id, string $nome, DateTimeInterface $dataNascimento, Endereco $endereco, float $renda)
         {
-            parent::__construct($nome, $idade, $endereco);
-            $this->dataNascimento    = $dataNascimento;
+            parent::__construct($id, $nome, $dataNascimento, $endereco);
             $this->renda  = $renda;
         }
 
-        public function getDataNascimento(): string
-        {
-            return $this->dataNascimento;
-        }
-
-        public function setDataNascimento(string $dataNascimento): void
-        {
-            $this->dataNascimento    = $dataNascimento;
-        }
 
         public function getRenda(): float
         {
@@ -41,10 +30,10 @@
         public function __toString(): string
         {
             return "<p>Nome: ".$this->nome.
-            "<br>Idade: ".$this->idade.
+            "<br>Idade: ".$this->idade(). " anos".
+            "<br>Nasc.: ".$this->getDataNascimento()->format('d/m/Y').
             "<br>End: ".$this->endereco->getNomeLogradouro().", ".$this->endereco->getNumero()." - ".$this->endereco->getBairro().
             "<br>Renda: ".$this->renda.
-            "<br>Data Nascimento: ".$this->dataNascimento.
             "</p>";
         }
 
