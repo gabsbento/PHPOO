@@ -2,7 +2,7 @@
 
 use Bento\Comercial\Infraestrutura\Persistencia\CriadorConexao;
 use Bento\Comercial\Infraestrutura\Repositorio\PdoRepositorioProduto;
-use Bento\Comercial\Model\Produto;
+use Bento\Comercial\Dominio\Model\Produto;
     require_once 'autoload.php';
 
     echo "<pre>";

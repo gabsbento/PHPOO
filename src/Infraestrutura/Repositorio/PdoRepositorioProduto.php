@@ -1,7 +1,7 @@
 <?php 
     namespace Bento\Comercial\Infraestrutura\Repositorio;
 
-    use Bento\Comercial\Model\Produto;
+    use Bento\Comercial\Dominio\Model\Produto;
     use Bento\Comercial\Dominio\Repositorio\RepositorioProdutos;
     use Bento\Comercial\Persistencia;
     use PDO;

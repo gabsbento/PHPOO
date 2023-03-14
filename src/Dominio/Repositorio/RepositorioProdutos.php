@@ -2,7 +2,7 @@
 
     namespace Bento\Comercial\Dominio\Repositorio;
 
-    use Bento\Comercial\Model\Produto;
+    use Bento\Comercial\Dominio\Model\Produto;
 
     interface RepositorioProdutos
     {
